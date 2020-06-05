@@ -1,0 +1,12 @@
+
+/*
+
+ */
+
+.likes {
+    position: relative;
+}
+
+.likeIt , .dontLikeIt  {
+    margin: auto 10px;
+}

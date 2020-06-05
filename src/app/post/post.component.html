@@ -1,0 +1,16 @@
+<li class="list-group-item"
+    *ngFor="let post of  posts,let i = index"
+
+    [ngStyle]="{'background-color':getColor(i)}"
+>
+ <h4 >{{ post.title | uppercase }} -- {{ post.created_at | date: 'y MMMM EEEE d' | uppercase  }}</h4>
+ <p >{{ post.content }}</p>
+ <div class="likes">
+  <button class="btn btn-sm btn-success"
+          (click)="onLike(post)"
+  >Like It</button> <span class="likeIt">{{ post.likeIt }}</span>
+  <button class="btn btn-sm btn-danger"
+          (click)="onDisLike(post)"
+  >Dont Like It</button> <span class="dontLikeIt">{{ post.dontLikeIt }}</span>
+ </div>
+</li>
