@@ -5,7 +5,7 @@ import { Post } from '../post';
 })
 export class PostService {
 
-    posts = [
+      posts = [
         {
             title: 'Mon premier Post',
             content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',

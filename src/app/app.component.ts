@@ -1,35 +1,19 @@
-import {Component} from '@angular/core';
+import {Component , OnInit} from '@angular/core';
 import { Post } from './post';
+import {PostService} from './services/post.service';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements  OnInit {
     title = 'blog';
-    posts = [
-        {
-            title: 'Mon premier Post',
-            content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-            likeIt: 0,
-            dontLikeIt: 0,
-            created_at: new Date()
-        },
-        {
-            title: 'Mon deuxieme Post',
-            content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-            likeIt: 0,
-            dontLikeIt: 0,
-            created_at: new Date()
-        },
-        {
-            title: 'Mon 3ieme Post',
-            content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-            likeIt: 0,
-            dontLikeIt: 0,
-            created_at: new Date()
-        }
-        ];
+    posts: any[];
 
+    constructor(private  postService: PostService) {}
+
+    ngOnInit() {
+        this.posts = this.postService.posts;
+    }
 }
